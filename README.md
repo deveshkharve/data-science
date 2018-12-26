@@ -73,3 +73,14 @@ seaborn.heatmap(
 )
 plot.show()
 ```
+
+plot shows negative correlation between killPlace and winPlacePerc
+Validate by visualizing the data. We will use scatterplot and see how the data is related to each other.
+
+```
+seaborn.scatterplot(x = 'killPlace', y ='winPlacePerc', data=data[['killPlace', 'winPlacePerc']])
+plot.show()
+```
+
+from the figure it is clear that the data does not have any correlation as it is almost uniformly distributed
+and we cannot link the two attributes meaningfully.
