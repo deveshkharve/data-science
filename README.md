@@ -46,3 +46,30 @@ get more insights of the data
 print(data.describe())
 
 ```
+
+### understand data
+
+explore correlation among the features provided
+
+filter data, 'Id', 'groupId', 'matchId', 'matchType' are unique entries and should be neglected 
+```
+cols_to_drop = ['Id', 'groupId', 'matchId', 'matchType']
+cols_to_fit = [col for col in data.columns if col not in cols_to_drop]
+```
+find correlation
+```
+corr = data[cols_to_fit].corr()
+```
+
+plot a heatmap to visualize the corrrelation data
+```
+sns.heatmap(
+    corr,
+    xticklabels=corr.columns.values,
+    yticklabels=corr.columns.values,
+    linecolor='white',
+    linewidths=0.1,
+    cmap="YlRd"
+)
+plt.show()
+```
