@@ -3,8 +3,8 @@
 ```
 import pandas as pd
 from sklearn import linear_model
-import matplotlib.pyplot as plt
-import seaborn as sns
+import matplotlib.pyplot as plot
+import seaborn
 
 data = pd.read_csv('PUBG_train_V2.csv')
 ```
@@ -63,7 +63,7 @@ corr = data[cols_to_fit].corr()
 
 plot a heatmap to visualize the corrrelation data
 ```
-sns.heatmap(
+seaborn.heatmap(
     corr,
     xticklabels=corr.columns.values,
     yticklabels=corr.columns.values,
@@ -71,5 +71,5 @@ sns.heatmap(
     linewidths=0.1,
     cmap="YlRd"
 )
-plt.show()
+plot.show()
 ```
